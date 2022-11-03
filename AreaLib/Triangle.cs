@@ -2,14 +2,14 @@
 {
     public class Triangle : Shape
     {
-        public double ASide { get; private set; }
-        public double BSide { get; private set; }
-        public double CSide { get; private set; }
+        public double ASide { get; private set; } = 1;
+        public double BSide { get; private set; } = 1;
+        public double CSide { get; private set; } = 1;
         public Triangle(double aSide, double bSide, double cSide)
         {
-            ASide = aSide;
-            BSide = bSide;
-            CSide = cSide;
+            if (aSide > 0) ASide = aSide;
+            if (bSide > 0) BSide = bSide;
+            if (cSide > 0) CSide = cSide;
         }
 
         public double GetPerimeter()
